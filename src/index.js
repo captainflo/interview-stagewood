@@ -32,6 +32,8 @@ if (process.env.NODE_ENV === 'production') {
 const server = new ApolloServer({
   typeDefs: fs.readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8'),
   resolvers,
+  introspection: true,
+  playground: true,
   context: ({ req }) => {
     return {
       ...req,
