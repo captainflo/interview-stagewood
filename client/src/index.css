@@ -1,13 +1,73 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+}
+h4,
+h2 {
+  font-weight: 400;
+}
+/* Button */
+.btn-website {
+  background: #ed213a !important;
+  border-color: #ed213a !important;
+  color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn-website:hover {
+  opacity: 0.9;
+}
+
+/* navbar */
+nav {
+  background: grey; /* fallback for old browsers */
+}
+nav a {
+  color: black;
+}
+
+a:hover {
+  color: #ed213a;
+  text-decoration: none;
+}
+/* App */
+.wrapper {
+  min-height: 100vh;
+}
+/* Signin */
+.wrapper-auth-image {
+  max-height: 100vh;
+}
+.wrapper-auth-image img {
+  width: 100%;
+}
+
+/* label-date */
+.label-date {
+  font-size: 12px;
+  display: block;
+  margin-top: -15px;
+}
+
+/*  */
+.wrapper-all-ticket {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+/* search activities */
+.button-search {
+  margin-top: 24px;
+  margin-left: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper-auth-image img {
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .wrapper-auth-image img {
+    height: auto;
+    overflow: hidden;
+  }
 }
