@@ -1,4 +1,5 @@
-const { ApolloServer, PubSub } = require('apollo-server');
+// const { ApolloServer, PubSub } = require('apollo-server');
+const { ApolloServer } = require('apollo-server-express');
 const { PrismaClient } = require('@prisma/client');
 const Mutation = require('./resolvers/Mutation');
 const fs = require('fs');
@@ -7,7 +8,7 @@ const { getUserId } = require('./utils');
 const express = require('express');
 const app = express();
 
-const pubsub = new PubSub();
+// const pubsub = new PubSub();
 
 const prisma = new PrismaClient({
   errorFormat: 'minimal',
@@ -44,6 +45,11 @@ const server = new ApolloServer({
   },
 });
 
-server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
+// #7 Use the Express application as middleware in Apollo server
+server.applyMiddleware({ app });
+const PORT = process.env.PORT || 4000;
+
+// #8 Set the port that the Express application will listen to
+app.listen(PORT, () => {
+  console.log(`🚀 Server ready at ${PORT}`);
 });
